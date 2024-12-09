@@ -1,14 +1,14 @@
 pipeline {
     agent { label 'Jenkins-Agent' }
     tools {
-        jdk 'Java17'    // Ensure Java17 is correctly configured in Global Tool Configuration
-        maven 'Maven 3'  // Use the exact tool name configured in Global Tool Configuration
+        jdk 'Java17'
+        maven '/home/ubuntu/jenkins/tools/maven'  // Custom Maven path
     }
 
     stages {
         stage("Cleanup Workspace") {
             steps {
-                cleanWs()  // Clean the workspace before starting
+                cleanWs()
             }
         }
         stage("Checkout from SCM") {
@@ -18,12 +18,12 @@ pipeline {
         }
         stage("Build Application") {
             steps {
-                sh "mvn clean package"  // Build the project using Maven
+                sh "mvn clean package"
             }
         }
         stage("Test Application") {
             steps {
-                sh "mvn test"  // Run unit tests
+                sh "mvn test"
             }
         }
     }
