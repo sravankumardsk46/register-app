@@ -2,7 +2,7 @@ pipeline {
     agent { label 'Jenkins-Agent' }
     tools {
         jdk 'Java17'
-        maven '/home/ubuntu/jenkins/tools/maven'  // Custom Maven path
+        maven 'Maven Custom'  // Use the name defined in Global Tool Configuration
     }
 
     stages {
