@@ -1,8 +1,8 @@
 pipeline {
     agent { label 'Jenkins-Agent' }
     tools {
-        jdk 'Java17'
-        maven 'Maven Custom'  // Use the name defined in Global Tool Configuration
+        jdk 'java17'
+        maven 'maven3'  // Use the name defined in Global Tool Configuration
     }
 
     stages {
